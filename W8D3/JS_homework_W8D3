@@ -1,0 +1,87 @@
+// madLib function 
+
+function madLib(wd1, wd2, wd3) {
+    var verb = wd1;
+    var adjective = wd2;
+    var noun = wd3;
+    var sentence = 'We shall ' + verb + ' the ' + adjective + ' ' + noun + '.';
+    console.log(sentence);
+}
+
+
+
+//   isSubstring function
+
+function isSubstring(searchString, subString) {
+    var searchString = searchString;
+    var subString = subString;
+    var bool = searchString.includes(subString);
+    console.log(bool);
+}
+
+
+
+//   fizzBuzz function
+
+function fizzBuzz(array) {
+    let divs = [];
+
+    for (let i = 0; i < array.length; i++) {
+        let curr = array[i];
+        if (curr % 3 === 0 || curr % 5 === 0) {
+            divs.push(curr);
+        }
+    }
+
+    return divs
+}
+
+
+//   isPrime function
+
+function isPrime(number) {
+    var bool = true;
+
+    if (number < 2) {
+        bool = false;
+    }
+
+    for (let i = 2; i < number; i++) {
+        if (number % i === 0) {
+            bool = false;
+        }
+    }
+    return bool
+}
+
+
+
+//   firstNPrimes function
+
+function firstNPrimes(number) {
+    
+    var result = [];
+    
+    let i = 2;
+    while (result.length < number) {
+         if (isPrime(i)) {
+            result.push(i);
+        }
+        i++;
+    }
+
+    return result
+}
+
+
+
+//   sumOfNPrimes function
+
+function sumOfNPrimes(number) {
+    const primesArray = firstNPrimes(number);
+    var sum = 0;
+    for(let i = 0; i < primesArray.length; i++) {
+        sum += primesArray[i]
+    }
+    return sum
+}
